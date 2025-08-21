@@ -3,2575 +3,642 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eric Britez | Creatividad & Innovación Digital</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            /* Enhanced Color Palette */
-            --primary: #6366f1;
-            --primary-light: #818cf8;
-            --primary-dark: #4f46e5;
-            --accent: #f59e0b;
-            --accent-light: #fbbf24;
-            --success: #10b981;
-            --error: #ef4444;
-            --warning: #f59e0b;
-            
-            /* Advanced Background System */
-            --bg-primary: #000000;
-            --bg-secondary: #0a0a0a;
-            --bg-tertiary: #111111;
-            --bg-card: rgba(255, 255, 255, 0.02);
-            --bg-card-hover: rgba(255, 255, 255, 0.05);
-            --bg-glass: rgba(255, 255, 255, 0.03);
-            --bg-glass-strong: rgba(255, 255, 255, 0.08);
-            
-            /* Enhanced Border System */
-            --border-primary: rgba(255, 255, 255, 0.08);
-            --border-secondary: rgba(255, 255, 255, 0.12);
-            --border-accent: rgba(99, 102, 241, 0.3);
-            --border-glow: rgba(99, 102, 241, 0.5);
-            
-            /* Sophisticated Text Colors */
-            --text-primary: #ffffff;
-            --text-secondary: #e4e4e7;
-            --text-tertiary: #a1a1aa;
-            --text-muted: #71717a;
-            --text-accent: var(--primary-light);
-            
-            /* Dynamic Shadows */
-            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
-            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
-            --shadow-xl: 0 25px 60px rgba(0, 0, 0, 0.6);
-            --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.3);
-            --shadow-accent: 0 0 20px rgba(245, 158, 11, 0.4);
-            
-            /* Advanced Gradients */
-            --gradient-primary: linear-gradient(135deg, var(--primary), var(--accent));
-            --gradient-secondary: linear-gradient(135deg, #667eea, #764ba2);
-            --gradient-accent: linear-gradient(135deg, var(--accent), #ff6b6b);
-            --gradient-dark: linear-gradient(135deg, #000000, #111111);
-            --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
-            --gradient-text: linear-gradient(135deg, #ffffff, #e4e4e7);
-            
-            /* Animation Curves */
-            --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-            --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            --ease-sharp: cubic-bezier(0.4, 0, 1, 1);
-            
-            /* Spacing System */
-            --space-xs: 0.25rem;
-            --space-sm: 0.5rem;
-            --space-md: 1rem;
-            --space-lg: 1.5rem;
-            --space-xl: 2rem;
-            --space-2xl: 3rem;
-            --space-3xl: 4rem;
-            --space-4xl: 6rem;
-            --space-5xl: 8rem;
-            
-            /* Responsive Breakpoints */
-            --bp-sm: 640px;
-            --bp-md: 768px;
-            --bp-lg: 1024px;
-            --bp-xl: 1280px;
-            --bp-2xl: 1536px;
-        }
-
-        /* Reset & Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        *::before,
-        *::after {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-            min-height: 100vh;
-            font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* Advanced Background Effects */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.15), transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.1), transparent 50%),
-                radial-gradient(circle at 60% 10%, rgba(16, 185, 129, 0.08), transparent 50%);
-            pointer-events: none;
-            z-index: -2;
-            animation: backgroundShift 20s ease-in-out infinite;
-        }
-
-        @keyframes backgroundShift {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(-20px, -20px) rotate(1deg); }
-        }
-
-        /* Animated Grid Background */
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: gridShift 30s linear infinite;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        @keyframes gridShift {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
-        }
-
-        /* Cursor Enhancement */
-        .cursor {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            mix-blend-mode: difference;
-            transition: transform 0.15s ease;
-        }
-
-        .cursor.hover {
-            transform: scale(2);
-        }
-
-    
-      /* Enhanced Navigation */
-.nav {
-            position: fixed;
-            top: var(--space-lg);
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-            display: flex;
-            gap: 2px;
-            padding: 4px;
-            background: var(--bg-glass);
-            backdrop-filter: blur(24px) saturate(180%);
-            border: 1px solid var(--border-primary);
-            border-radius: 60px;
-            box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255,255,255,0.1);
-            animation: navFloat 3s ease-in-out infinite;
-            transition: all 0.3s var(--ease-smooth);
-        }
-
-        @keyframes navFloat {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(-2px); }
-        }
-
-        .nav-item {
-            position: relative;
-            padding: 12px 24px;
-            color: var(--text-tertiary);
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.3s var(--ease-smooth);
-            overflow: hidden;
-            text-align: center;
-            white-space: nowrap;
-        }
-
-        .nav-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-primary);
-            opacity: 0;
-            transition: opacity 0.3s var(--ease-smooth);
-            z-index: -1;
-        }
-
-        .nav-item.active,
-        .nav-item:hover {
-            color: white;
-            transform: translateY(-1px);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .nav-item.active::before,
-        .nav-item:hover::before {
-            opacity: 1;
-        }
-
-        /* Mobile Navigation */
-        .nav-mobile {
-            display: none;
-            position: fixed;
-            bottom: var(--space-lg);
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-        }
-
-        /* Responsive Navigation Fixes */
-        @media (max-width: 900px) {
-            .nav {
-                padding: 3px;
-                gap: 1px;
-                top: var(--space-md);
-            }
-            
-            .nav-item {
-                padding: 10px 18px;
-                font-size: 13px;
-            }
-        }
-
-        @media (max-width: 770px) {
-            .nav {
-                padding: 2px;
-                gap: 1px;
-                top: var(--space-sm);
-                max-width: 90vw;
-                overflow-x: auto;
-                scrollbar-width: none; /* Firefox */
-                -ms-overflow-style: none; /* IE and Edge */
-            }
-            
-            .nav::-webkit-scrollbar {
-                display: none; /* Chrome, Safari and Opera */
-            }
-            
-            .nav-item {
-                padding: 8px 14px;
-                font-size: 12px;
-                white-space: nowrap;
-                min-width: auto;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .nav { display: none; }
-            .nav-mobile { display: flex; }
-        }
-        
-@media (max-width: 480px) {
-  .hero-content {
-    padding: 0 var(--space-2xl);
-    text-align: center;
-  }
-
-  .hero-subtitle {
-    font-size: 1.1rem;
-    line-height: 1.4;
-  }
-
-  .hero-title {
-    font-size: 2.5rem;
-  }
-}
-
-        /* Revolutionary Hero Section */
-        .hero {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 30% 40%, rgba(99, 102, 241, 0.2), transparent 60%),
-                radial-gradient(circle at 70% 60%, rgba(245, 158, 11, 0.15), transparent 60%);
-            animation: heroShift 15s ease-in-out infinite;
-        }
-
-        @keyframes heroShift {
-            0%, 100% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.05) rotate(0.5deg); }
-        }
-
-        .hero-content {
-            position: relative;
-            max-width: 900px;
-            padding: 0 var(--space-lg);
-            z-index: 10;
-        }
-
-        .hero-greeting {
-            font-size: 18px;
-            color: var(--text-tertiary);
-            margin-bottom: var(--space-lg);
-            opacity: 0;
-            animation: fadeInUp 1s var(--ease-smooth) 0.2s forwards;
-        }
-
-        .hero-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(3.5rem, 12vw, 8rem);
-            font-weight: 800;
-            margin: var(--space-lg) 0;
-            background: linear-gradient(135deg, #ffffff 0%, #e4e4e7 50%, #a1a1aa 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            position: relative;
-            opacity: 0;
-            animation: fadeInUp 1s var(--ease-smooth) 0.4s forwards;
-        }
-
-        .hero-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 4px;
-            background: var(--gradient-primary);
-            border-radius: 2px;
-            animation: expandWidth 1s var(--ease-smooth) 1.5s forwards;
-            transform-origin: center;
-            scale: 0 1;
-        }
-
-        @keyframes expandWidth {
-            to { scale: 1 1; }
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.2rem, 4vw, 2rem);
-            color: var(--text-secondary);
-            margin-bottom: var(--space-2xl);
-            font-weight: 300;
-            opacity: 0;
-            animation: fadeInUp 1s var(--ease-smooth) 0.6s forwards;
-        }
-
-        .hero-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-md);
-            padding: 18px 36px;
-            background: var(--bg-glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border-secondary);
-            border-radius: 60px;
-            color: var(--text-primary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.4s var(--ease-smooth);
-            position: relative;
-            overflow: hidden;
-            opacity: 0;
-            animation: fadeInUp 1s var(--ease-smooth) 0.8s forwards;
-        }
-
-        .hero-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-primary);
-            transition: left 0.4s var(--ease-smooth);
-            z-index: -1;
-        }
-
-        .hero-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-glow);
-            border-color: var(--border-accent);
-        }
-
-        .hero-cta:hover::before {
-            left: 0;
-        }
-
-        .hero-cta-icon {
-            transition: transform 0.3s var(--ease-smooth);
-        }
-
-        .hero-cta:hover .hero-cta-icon {
-            transform: translateX(4px);
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Floating Elements */
-        .floating-elements {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            overflow: hidden;
-        }
-
-        .floating-element {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            border: 1px solid var(--border-primary);
-            border-radius: 8px;
-            background: var(--bg-glass);
-            backdrop-filter: blur(10px);
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .floating-element:nth-child(1) {
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .floating-element:nth-child(2) {
-            top: 60%;
-            right: 15%;
-            animation-delay: 2s;
-        }
-
-        .floating-element:nth-child(3) {
-            bottom: 30%;
-            left: 20%;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-
-        /* Enhanced Sections */
-        .section {
-            position: relative;
-            padding: var(--space-5xl) 0;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 var(--space-xl);
-        }
-
-        /* Section Headers with Animation */
-        .section-header {
-            text-align: center;
-            margin-bottom: var(--space-4xl);
-            position: relative;
-        }
-
-        .section-tag {
-            display: inline-block;
-            padding: 8px 20px;
-            background: var(--bg-glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border-primary);
-            border-radius: 50px;
-            font-size: 14px;
-            color: var(--text-accent);
-            margin-bottom: var(--space-lg);
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .section-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 700;
-            margin-bottom: var(--space-lg);
-            background: var(--gradient-text);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .section-description {
-            color: var(--text-tertiary);
-            font-size: 18px;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.7;
-        }
-
-        /* Revolutionary About Section */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: var(--space-4xl);
-            align-items: center;
-            margin-top: var(--space-3xl);
-        }
-
-        .about-content {
-            font-size: 18px;
-            line-height: 1.8;
-        }
-
-        .about-content p {
-            margin-bottom: var(--space-xl);
-            color: var(--text-secondary);
-        }
-
-        .highlight {
-            color: var(--text-primary);
-            font-weight: 600;
-            background: var(--gradient-primary);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            position: relative;
-        }
-
-        .about-card {
-            background: var(--bg-glass);
-            backdrop-filter: blur(24px) saturate(180%);
-            border: 1px solid var(--border-secondary);
-            border-radius: 32px;
-            padding: var(--space-2xl);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s var(--ease-smooth);
-        }
-
-        .about-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--gradient-primary);
-            border-radius: 32px 32px 0 0;
-        }
-
-        .about-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--border-accent);
-        }
-
-        .avatar {
-            width: 140px;
-            height: 140px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            margin: 0 auto var(--space-xl);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            box-shadow: var(--shadow-glow);
-            animation: avatarPulse 4s ease-in-out infinite;
-        }
-
-        @keyframes avatarPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        /* Advanced Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: var(--space-xl);
-            margin-top: var(--space-3xl);
-        }
-
-        .skill-card {
-            background: var(--bg-glass);
-            backdrop-filter: blur(24px) saturate(180%);
-            border: 1px solid var(--border-primary);
-            border-radius: 24px;
-            padding: var(--space-2xl);
-            transition: all 0.4s var(--ease-smooth);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-primary);
-            opacity: 0;
-            transition: opacity 0.4s var(--ease-smooth);
-            z-index: -1;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--border-accent);
-        }
-
-        .skill-card:hover::before {
-            opacity: 0.05;
-        }
-
-        .skill-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: var(--space-lg);
-        }
-
-        .skill-name {
-            font-weight: 700;
-            font-size: 18px;
-        }
-
-        .skill-level {
-            color: var(--text-accent);
-            font-weight: 600;
-            font-size: 14px;
-            padding: 4px 12px;
-            background: rgba(99, 102, 241, 0.1);
-            border-radius: 20px;
-            border: 1px solid rgba(99, 102, 241, 0.2);
-        }
-
-        .skill-bar {
-            height: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-            margin-bottom: var(--space-lg);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .skill-progress {
-            height: 100%;
-            background: var(--gradient-primary);
-            border-radius: 4px;
-            transition: width 2s var(--ease-smooth);
-            position: relative;
-        }
-
-        .skill-progress::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            animation: shimmer 2s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--space-sm);
-        }
-
-        .skill-tag {
-            padding: 6px 14px;
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            border-radius: 20px;
-            color: var(--primary-light);
-            font-size: 12px;
-            font-weight: 500;
-            transition: all 0.3s var(--ease-smooth);
-        }
-
-        .skill-tag:hover {
-            background: rgba(99, 102, 241, 0.2);
-            transform: translateY(-1px);
-        }
-
-        /* Next-Level Projects Section */
-        .projects-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: var(--space-3xl);
-            flex-wrap: wrap;
-            gap: var(--space-lg);
-        }
-
-        .project-filters {
-            display: flex;
-            gap: var(--space-sm);
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            padding: 12px 24px;
-            background: var(--bg-glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border-primary);
-            border-radius: 50px;
-            color: var(--text-tertiary);
-            cursor: pointer;
-            transition: all 0.3s var(--ease-smooth);
-            font-size: 14px;
-            font-weight: 500;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .filter-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-primary);
-            transition: left 0.3s var(--ease-smooth);
-            z-index: -1;
-        }
-
-        .filter-btn.active,
-        .filter-btn:hover {
-            color: white;
-            border-color: var(--border-accent);
-            transform: translateY(-2px);
-        }
-
-        .filter-btn.active::before,
-        .filter-btn:hover::before {
-            left: 0;
-        }
-
-        .admin-btn {
-            padding: 14px 28px;
-            background: var(--success);
-            border: none;
-            border-radius: 50px;
-            color: white;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 14px;
-            transition: all 0.3s var(--ease-smooth);
-            box-shadow: var(--shadow-md);
-        }
-
-        .admin-btn:hover {
-            background: #059669;
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-            gap: var(--space-2xl);
-        }
-
-        .project-card {
-            background: var(--bg-glass);
-            backdrop-filter: blur(24px) saturate(180%);
-            border: 1px solid var(--border-primary);
-            border-radius: 28px;
-            overflow: hidden;
-            transition: all 0.5s var(--ease-smooth);
-            cursor: pointer;
-            position: relative;
-            transform-style: preserve-3d;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-primary);
-            opacity: 0;
-            transition: opacity 0.4s var(--ease-smooth);
-            z-index: -1;
-        }
-
-        .project-card:hover {
-            transform: translateY(-12px) rotateX(2deg);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--border-accent);
-        }
-
-        .project-card:hover::before {
-            opacity: 0.03;
-        }
-
-        .project-image {
-            height: 240px;
-            background: var(--gradient-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3.5rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-image img,
-        .project-image video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s var(--ease-smooth);
-        }
-
-        .project-card:hover .project-image img,
-        .project-card:hover .project-image video {
-            transform: scale(1.1);
-        }
-
-        .project-content {
-            padding: var(--space-2xl);
-        }
-
-        .project-title {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: var(--space-md);
-            color: var(--text-primary);
-        }
-
-        .project-description {
-            color: var(--text-secondary);
-            margin-bottom: var(--space-xl);
-            line-height: 1.6;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--space-sm);
-        }
-
-        .project-tag {
-            padding: 6px 14px;
-            background: rgba(245, 158, 11, 0.1);
-            border: 1px solid rgba(245, 158, 11, 0.2);
-            border-radius: 20px;
-            color: var(--accent-light);
-            font-size: 12px;
-            font-weight: 500;
-        }
-
-        /* Revolutionary Contact Section */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: var(--space-2xl);
-            margin-top: var(--space-3xl);
-        }
-
-        .contact-card {
-            background: var(--bg-glass);
-            backdrop-filter: blur(24px) saturate(180%);
-            border: 1px solid var(--border-primary);
-            border-radius: 28px;
-            padding: var(--space-2xl);
-            text-align: center;
-            transition: all 0.4s var(--ease-smooth);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-primary);
-            opacity: 0;
-            transition: opacity 0.4s var(--ease-smooth);
-            z-index: -1;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--border-accent);
-        }
-
-        .contact-card:hover::before {
-            opacity: 0.05;
-        }
-
-        .contact-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto var(--space-xl);
-            font-size: 2rem;
-            box-shadow: var(--shadow-glow);
-            animation: iconFloat 3s ease-in-out infinite;
-        }
-
-        @keyframes iconFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-
-        .contact-title {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: var(--space-sm);
-        }
-
-        .contact-link {
-            color: var(--text-accent);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s var(--ease-smooth);
-        }
-
-        .contact-link:hover {
-            color: var(--primary-light);
-            transform: translateX(2px);
-        }
-
-        /* Premium Modal System */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(20px);
-            z-index: 10000;
-            opacity: 0;
-            transition: opacity 0.4s var(--ease-smooth);
-        }
-
-        .modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: var(--space-lg);
-            opacity: 1;
-        }
-
-        .modal-content {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-secondary);
-            border-radius: 32px;
-            padding: var(--space-3xl);
-            max-width: 700px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            box-shadow: var(--shadow-xl);
-            transform: scale(0.9);
-            transition: transform 0.4s var(--ease-bounce);
-        }
-
-        .modal.active .modal-content {
-            transform: scale(1);
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: var(--space-2xl);
-            padding-bottom: var(--space-lg);
-            border-bottom: 1px solid var(--border-primary);
-        }
-
-        .modal-title {
-            font-size: 24px;
-            font-weight: 700;
-            background: var(--gradient-text);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .close-btn {
-            background: var(--bg-glass);
-            border: 1px solid var(--border-primary);
-            border-radius: 50%;
-            width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            color: var(--text-secondary);
-            cursor: pointer;
-            transition: all 0.3s var(--ease-smooth);
-        }
-
-        .close-btn:hover {
-            background: var(--error);
-            color: white;
-            transform: rotate(90deg);
-        }
-
-        /* Advanced Form Styles */
-        .form-group {
-            margin-bottom: var(--space-xl);
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: var(--space-sm);
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .form-input,
-        .form-textarea,
-        .form-select {
-            width: 100%;
-            padding: 16px 20px;
-            background: var(--bg-glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border-primary);
-            border-radius: 16px;
-            color: var(--text-primary);
-            font-size: 14px;
-            transition: all 0.3s var(--ease-smooth);
-        }
-
-        .form-input:focus,
-        .form-textarea:focus,
-        .form-select:focus {
-            outline: none;
-            border-color: var(--border-accent);
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
-        }
-
-        .form-textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        /* Drag & Drop Upload */
-        .upload-area {
-            border: 2px dashed var(--border-primary);
-            border-radius: 20px;
-            padding: var(--space-3xl);
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s var(--ease-smooth);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .upload-area::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-primary);
-            opacity: 0;
-            transition: opacity 0.3s var(--ease-smooth);
-            z-index: -1;
-        }
-
-        .upload-area:hover {
-            border-color: var(--border-accent);
-            transform: translateY(-2px);
-        }
-
-        .upload-area:hover::before {
-            opacity: 0.05;
-        }
-
-        .upload-icon {
-            font-size: 3rem;
-            margin-bottom: var(--space-lg);
-            opacity: 0.6;
-        }
-
-        .upload-text {
-            font-size: 16px;
-            margin-bottom: var(--space-sm);
-            font-weight: 600;
-        }
-
-        .upload-subtext {
-            font-size: 14px;
-            color: var(--text-muted);
-        }
-
-        /* Media Preview Grid */
-        .preview-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: var(--space-md);
-            margin-top: var(--space-lg);
-        }
-
-        .preview-item {
-            position: relative;
-            aspect-ratio: 1;
-            border-radius: 16px;
-            overflow: hidden;
-            background: var(--bg-tertiary);
-            border: 1px solid var(--border-primary);
-        }
-
-        .preview-item img,
-        .preview-item video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .remove-btn {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            background: var(--error);
-            border: none;
-            border-radius: 50%;
-            width: 28px;
-            height: 28px;
-            color: white;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: bold;
-            transition: all 0.3s var(--ease-smooth);
-            box-shadow: var(--shadow-md);
-        }
-
-        .remove-btn:hover {
-            transform: scale(1.1);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* Button System */
-        .form-actions {
-            display: flex;
-            gap: var(--space-md);
-            justify-content: flex-end;
-            margin-top: var(--space-2xl);
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 14px 28px;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.3s var(--ease-smooth);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            transition: left 0.3s var(--ease-smooth);
-            z-index: -1;
-        }
-
-        .btn:hover::before {
-            left: 0;
-        }
-
-        .btn-primary {
-            background: var(--gradient-primary);
-            color: white;
-            box-shadow: var(--shadow-md);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .btn-secondary {
-            background: var(--bg-glass);
-            color: var(--text-secondary);
-            border: 1px solid var(--border-primary);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--border-accent);
-            color: var(--text-primary);
-        }
-
-        .btn-danger {
-            background: var(--error);
-            color: white;
-        }
-
-        .btn-danger:hover {
-            background: #dc2626;
-            transform: translateY(-2px);
-        }
-
-        /* Success Notification */
-        .success-msg {
-            position: fixed;
-            top: 100px;
-            right: var(--space-lg);
-            background: var(--success);
-            color: white;
-            padding: var(--space-lg) var(--space-xl);
-            border-radius: 16px;
-            z-index: 10001;
-            transform: translateX(400px);
-            transition: transform 0.4s var(--ease-bounce);
-            box-shadow: var(--shadow-lg);
-            font-weight: 600;
-        }
-
-        .success-msg.show {
-            transform: translateX(0);
-        }
-
-        /* Scroll Animations */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s var(--ease-smooth);
-        }
-
-        .animate-on-scroll.animate {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Loading States */
-        .loading {
-            position: relative;
-            pointer-events: none;
-        }
-
-        .loading::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 20px;
-            height: 20px;
-            margin: -10px 0 0 -10px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-top: 2px solid white;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .container {
-                max-width: 1100px;
-                padding: 0 var(--space-lg);
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-3xl);
-                text-align: center;
-            }
-            
-            .skills-grid {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            }
-            
-            .projects-grid {
-                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            }
-        }
-
-        @media (max-width: 768px) {
-            :root {
-                --space-xs: 0.125rem;
-                --space-sm: 0.25rem;
-                --space-md: 0.5rem;
-                --space-lg: 0.75rem;
-                --space-xl: 1rem;
-                --space-2xl: 1.5rem;
-                --space-3xl: 2rem;
-                --space-4xl: 3rem;
-                --space-5xl: 4rem;
-            }
-            
-            .container {
-                padding: 0 var(--space-lg);
-            }
-            
-            .section {
-                padding: var(--space-4xl) 0;
-            }
-            
-            .hero-title {
-                font-size: clamp(2.5rem, 10vw, 4rem);
-            }
-            
-            .projects-header {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            
-            .project-filters {
-                justify-content: center;
-            }
-            
-            .skills-grid,
-            .projects-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .modal-content {
-                margin: var(--space-md);
-                padding: var(--space-xl);
-            }
-            
-            .form-actions {
-                justify-content: stretch;
-            }
-            
-            .form-actions .btn {
-                flex: 1;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .nav {
-                padding: 2px;
-                gap: 1px;
-            }
-            
-            .nav-item {
-                padding: 8px 16px;
-                font-size: 12px;
-            }
-            
-            .hero-content {
-                padding: 0 var(--space-md);
-            }
-            
-            .skill-card,
-            .project-card,
-            .contact-card {
-                padding: var(--space-lg);
-            }
-        }
-
-        /* Performance Optimizations */
-        * {
-            will-change: auto;
-        }
-        
-        .hero-title,
-        .project-card,
-        .skill-card,
-        .nav-item {
-            will-change: transform;
-        }
-
-        /* Accessibility Improvements */
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        /* Focus States */
-        .nav-item:focus,
-        .filter-btn:focus,
-        .btn:focus,
-        .form-input:focus,
-        .form-textarea:focus,
-        .form-select:focus {
-            outline: 2px solid var(--primary);
-            outline-offset: 2px;
-        }
-
-        /* Print Styles */
-        @media print {
-            .nav,
-            .floating-elements,
-            .modal,
-            .success-msg {
-                display: none !important;
-            }
-            
-            .section {
-                padding: 2rem 0;
-            }
-            
-            .hero {
-                height: auto;
-                padding: 2rem 0;
-            }
-        }
-    </style>
+    <title>Eric Brítez - Developer & Content Creator</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("E050dhy-CVaghGjV9"); // Tu PUBLIC_KEY
+  })();
+</script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-
-    <!-- Enhanced Navigation -->
-    <nav class="nav">
-        <a href="#home" class="nav-item active">Inicio</a>
-        <a href="#about" class="nav-item">Sobre Mí</a>
-        <a href="#skills" class="nav-item">Habilidades</a>
-        <a href="#projects" class="nav-item">Proyectos</a>
-        <a href="#contact" class="nav-item">Contacto</a>
-    </nav>
-
-    <!-- Mobile Navigation -->
-    <nav class="nav nav-mobile">
-        <a href="#home" class="nav-item active">🏠</a>
-        <a href="#about" class="nav-item">👨‍💻</a>
-        <a href="#skills" class="nav-item">⚡</a>
-        <a href="#projects" class="nav-item">🚀</a>
-        <a href="#contact" class="nav-item">📧</a>
-    </nav>
-
-    <!-- Revolutionary Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-bg"></div>
-        <div class="floating-elements">
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-greeting">✨ Hola, soy</div>
-            <h1 class="hero-title">Eric Britez</h1>
-            <p class="hero-subtitle">Diseñador • Editor • Desarrollador • Creador Digital</p>
-            <a href="#about" class="hero-cta">
-                <span>Descubre Mi Universo</span>
-                <span class="hero-cta-icon">→</span>
-            </a>
-        </div>
-    </section>
-
-    <!-- Enhanced About Section -->
-    <section id="about" class="section animate-on-scroll">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Sobre Mí</span>
-                <h2 class="section-title">Transformando Ideas en Experiencias Digitales</h2>
-                <p class="section-description">Combino creatividad, tecnología y estrategia para crear soluciones que impactan y conectan con las personas.</p>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading">
+        <div class="terminal">
+            <div class="terminal-header">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
             </div>
-            
-            <div class="about-grid">
-                <div class="about-content">
-                    <p>Soy un <span class="highlight">especialista en experiencias digitales</span> con una pasión incansable por la innovación y el diseño excepcional. Mi enfoque se centra en crear soluciones que no solo cumplen con los objetivos técnicos, sino que también generan emociones y conexiones genuinas.</p>
-                    
-                    <p>Con experiencia en <span class="highlight">desarrollo de software y edición de video</span>, he trabajado con marcas y proyectos que van desde startups disruptivas hasta empresas consolidadas, siempre buscando superar las expectativas y establecer nuevos estándares de calidad.</p>
-                    
-                    <p>Mi filosofía es simple: <span class="highlight">cada proyecto es una oportunidad para innovar</span> y cada desafío es una puerta hacia soluciones más creativas y efectivas. Creo en el poder de la tecnología para mejorar vidas y crear experiencias memorable.</p>
+            <div class="terminal-body">
+                <div class="loading-text">
+                    <span class="prompt">$</span> <span class="typing-animation">initializing portfolio...</span>
                 </div>
-                
-                <div class="about-card">
-                    <div class="avatar">👨‍💻</div>
-                    <h3>Innovador Digital</h3>
-                    <p>Creando el futuro, una línea de código a la vez</p>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Advanced Skills Section -->
-    <section id="skills" class="section animate-on-scroll">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Habilidades</span>
-                <h2 class="section-title">Especialidades & Competencias</h2>
-                <p class="section-description">Perfil multidisciplinario con enfoque en creatividad, tecnología y conexión humana.</p>
-            </div>
-            
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <div class="skill-name">🎨 Diseño Gráfico</div>
-                        <div class="skill-level">Expert</div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 95%"></div>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Canva Pro</span>
-                        <span class="skill-tag">Photoshop</span>
-                        <span class="skill-tag">Identidad Visual</span>
-                        <span class="skill-tag">Branding</span>
-                        <span class="skill-tag">UI Design</span>
-                    </div>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <div class="skill-name">🎬 Edición de Video</div>
-                        <div class="skill-level">Avanzado</div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 98%"></div>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">CapCut</span>
-                        <span class="skill-tag">After Effects</span>
-                        <span class="skill-tag">Reels</span>
-                        <span class="skill-tag">Shorts</span>
-                    </div>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <div class="skill-name">💻 Desarrollo Web</div>
-                        <div class="skill-level">Junior</div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 82%"></div>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">CSS3</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">React</span>
-                    </div>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <div class="skill-name">🚀 UX/UI Design</div>
-                        <div class="skill-level">Avanzado</div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 88%"></div>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Figma</span>
-                        <span class="skill-tag">User Research</span>
-                        <span class="skill-tag">Prototyping</span>
-                        <span class="skill-tag">Wireframing</span>
-                        <span class="skill-tag">Design Systems</span>
-                    </div>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <div class="skill-name">📺 Creación de Contenido</div>
-                        <div class="skill-level">Avanzado</div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 94%"></div>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">TikTok</span>
-                        <span class="skill-tag">Kick Streaming</span>
-                        <span class="skill-tag">YouTube</span>
-                        <span class="skill-tag">Social Media</span>
-                    </div>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <div class="skill-name">✨Habilidades Blandas</div>
-                        <div class="skill-level">Expert</div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 92%"></div>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Adaptabilidad</span>
-                        <span class="skill-tag">Autodidacta</span>
-                        <span class="skill-tag">Liderazgo</span>
-                        <span class="skill-tag">Comunicación</span>
-                        <span class="skill-tag">Creatividad</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Next-Level Projects Section -->
-    <section id="projects" class="section animate-on-scroll">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Proyectos</span>
-                <h2 class="section-title">Portafolio de Excelencia</h2>
-                <p class="section-description">Una selección cuidadosa de mis mejores trabajos y colaboraciones que demuestran mi capacidad de innovación.</p>
-            </div>
-            
-            <div class="projects-header">
-                <div class="project-filters">
-                    <button class="filter-btn active" data-filter="all">🌟 Todos</button>
-                    <button class="filter-btn" data-filter="design">🎨 Diseño</button>
-                    <button class="filter-btn" data-filter="video">🎬 Video</button>
-                    <button class="filter-btn" data-filter="web">💻 Desarrollo</button>
-                    <button class="filter-btn" data-filter="content">📺 Contenido</button>
-                </div>
-                <button class="admin-btn" onclick="openModal()">✨ Agregar Proyecto</button>
-            </div>
-            
-            <div class="projects-grid" id="projectsGrid">
-                <!-- Projects will be dynamically loaded here -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Revolutionary Contact Section -->
-    <section id="contact" class="section animate-on-scroll">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Contacto</span>
-                <h2 class="section-title">¡Trabajemos Juntos!</h2>
-                <p class="section-description">¿Tienes un proyecto en mente? Conversemos y hagamos realidad tus ideas más ambiciosas.</p>
-            </div>
-            
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <div class="contact-icon">📧</div>
-                    <h3 class="contact-title">Email Profesional</h3>
-                    <p><a href="mailto:erikbritejr@gmail.com" class="contact-link">erikbritejr@gmail.com</a></p>
-                </div>
-                
-                <div class="contact-card">
-                    <div class="contact-icon">📱</div>
-                    <h3 class="contact-title">WhatsApp</h3>
-                    <p><a href="tel:+543704564622" class="contact-link">+54 370 456 4622</a></p>
-                </div>
-                
-                <div class="contact-card">
-                    <div class="contact-icon">📸</div>
-                    <h3 class="contact-title">Instagram</h3>
-                    <p><a href="https://instagram.com/britez_eric" target="_blank" class="contact-link">@britez_eric</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Premium Modal System -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 id="modalTitle" class="modal-title">Agregar Proyecto</h3>
-                <button class="close-btn" onclick="closeModal()">&times;</button>
-            </div>
-            
-            <form id="projectForm">
-                <div class="form-group">
-                    <label class="form-label">✨ Título del Proyecto</label>
-                    <input type="text" id="title" class="form-input" placeholder="Nombre increíble de tu proyecto..." required>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">📝 Descripción</label>
-                    <textarea id="description" class="form-textarea" placeholder="Cuenta la historia de tu proyecto..." required></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">🎯 Categoría</label>
-                    <select id="category" class="form-select" required>
-                        <option value="">Seleccionar categoría</option>
-                        <option value="design">🎨 Diseño Gráfico</option>
-                        <option value="video">🎬 Edición Video</option>
-                        <option value="web">💻 Desarrollo Web</option>
-                        <option value="content">📺 Contenido Digital</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">🛠️ Tecnologías/Herramientas</label>
-                    <input type="text" id="tech" class="form-input" placeholder="React, Photoshop, Premiere Pro, etc...">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">🖼️ Medios del Proyecto</label>
-                    <div class="upload-area" onclick="document.getElementById('media').click()">
-                        <div class="upload-icon">📸</div>
-                        <div class="upload-text">Arrastra archivos aquí o haz clic para seleccionar</div>
-                        <div class="upload-subtext">Soporta JPG, PNG, GIF, MP4, MOV, AVI (máx. 4 archivos)</div>
-                    </div>
-                    <input type="file" id="media" accept="image/*,video/*" multiple style="display: none;">
-                    <div id="preview" class="preview-grid"></div>
-                </div>
-                
-                <div class="form-actions">
-                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancelar</button>
-                    <button type="button" class="btn btn-danger" id="deleteBtn" onclick="deleteProject()" style="display: none;">🗑️ Eliminar</button>
-                    <button type="submit" class="btn btn-primary">💾 Guardar Proyecto</button>
-                </div>
-            </form>
         </div>
     </div>
 
-    <!-- Success Notification -->
-    <div id="successMsg" class="success-msg">✅ Proyecto guardado exitosamente</div>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-text">&lt;/&gt; Eric</span>
+                <div class="brand-subtitle">Developer</div>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link" data-section="home">
+                    <i class="fas fa-home"></i>
+                    <span>Inicio</span>
+                </a>
+                <a href="#about" class="nav-link" data-section="about">
+                    <i class="fas fa-user-astronaut"></i>
+                    <span>Sobre Mí</span>
+                </a>
+                <a href="#skills" class="nav-link" data-section="skills">
+                    <i class="fas fa-code-branch"></i>
+                    <span>Skills</span>
+                </a>
+                <a href="#projects" class="nav-link" data-section="projects">
+                    <i class="fas fa-rocket"></i>
+                    <span>Proyectos</span>
+                </a>
+                <a href="#experience" class="nav-link" data-section="experience">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Experiencia</span>
+                </a>
+                <a href="#contact" class="nav-link" data-section="contact">
+                    <i class="fas fa-satellite-dish"></i>
+                    <span>Contacto</span>
+                </a>
+            </div>
 
-    <script>
-        // ===== ENHANCED JAVASCRIPT SYSTEM =====
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <canvas id="matrix-canvas"></canvas>
+        </div>
         
-        // Global State Management
-        class PortfolioApp {
-            constructor() {
-                this.projects = this.loadProjects();
-                this.currentEditId = null;
-                this.mediaFiles = [];
-                this.observers = new Map();
+        <div class="hero-content">
+            <div class="hero-main">
+                <div class="hero-greeting">
+                    <span class="greeting-text">Hola, soy</span>
+                </div>
                 
-                this.init();
-            }
-            
-            init() {
-                this.setupEventListeners();
-                this.initializeComponents();
-                this.startAnimations();
-            }
-            
-            loadProjects() {
-                try {
-                    return JSON.parse(localStorage.getItem('portfolioProjects') || '[]');
-                } catch (error) {
-                    console.warn('Error loading projects:', error);
-                    return [];
-                }
-            }
-            
-            saveProjects() {
-                try {
-                    localStorage.setItem('portfolioProjects', JSON.stringify(this.projects));
-                } catch (error) {
-                    console.warn('Error saving projects:', error);
-                    this.showNotification('Error al guardar proyecto', 'error');
-                }
-            }
-            
-            setupEventListeners() {
-                // Navigation
-                this.initNavigation();
+                <h1 class="hero-name">
+                    <span class="name-highlight">Eric</span>
+                    <span class="name-normal">Brítez</span>
+                </h1>
                 
-                // Project filters
-                this.initFilters();
+                <div class="hero-roles">
+                    <span class="role-prefix">$</span>
+                    <span class="role-text" id="typing-text"></span>
+                    <span class="cursor">|</span>
+                </div>
                 
-                // Form handling
-                this.initForm();
+                <p class="hero-description">
+                    Joven desarrollador web y creador de contenido apasionado por la tecnología. 
+                    Especializado en desarrollo full-stack y edición digital, transformando ideas 
+                    en experiencias digitales innovadoras.
+                </p>
                 
-                // Scroll animations
-                this.initScrollAnimations();
-                
-                // Custom cursor
-                this.initCursor();
-                
-                // Keyboard shortcuts
-                this.initKeyboardShortcuts();
-                
-                // Responsive handlers
-                this.initResponsiveHandlers();
-            }
-            
-            initializeComponents() {
-                this.renderProjects();
-                this.initSkillAnimations();
-            }
-            
-            startAnimations() {
-                // Stagger skill progress bars
-                setTimeout(() => {
-                    document.querySelectorAll('.skill-progress').forEach((bar, index) => {
-                        setTimeout(() => {
-                            bar.style.width = bar.style.width;
-                        }, index * 200);
-                    });
-                }, 1000);
-            }
-        }
-
-        // ===== NAVIGATION SYSTEM =====
-        PortfolioApp.prototype.initNavigation = function() {
-            const navItems = document.querySelectorAll('.nav-item');
-            const sections = document.querySelectorAll('section[id]');
-            
-            navItems.forEach(item => {
-                item.addEventListener('click', (e) => {
-                    e.preventDefault();
+                <div class="hero-cta">
+                    <button class="cta-button primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Trabajemos Juntos</span>
+                        <div class="button-effect"></div>
+                    </button>
                     
-                    const targetId = item.getAttribute('href').substring(1);
-                    const targetSection = document.getElementById(targetId);
-                    
-                    if (targetSection) {
-                        // Update active states
-                        navItems.forEach(nav => nav.classList.remove('active'));
-                        item.classList.add('active');
-                        
-                        // Smooth scroll with offset
-                        const offset = 80;
-                        const elementPosition = targetSection.offsetTop;
-                        const offsetPosition = elementPosition - offset;
-                        
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-            
-            // Update navigation on scroll
-            let ticking = false;
-            window.addEventListener('scroll', () => {
-                if (!ticking) {
-                    requestAnimationFrame(() => {
-                        this.updateActiveNavigation();
-                        ticking = false;
-                    });
-                    ticking = true;
-                }
-            });
-        };
-        
-        PortfolioApp.prototype.updateActiveNavigation = function() {
-            const sections = document.querySelectorAll('section[id]');
-            const scrollPos = window.scrollY + 100;
-            
-            sections.forEach(section => {
-                const top = section.offsetTop;
-                const height = section.offsetHeight;
-                const id = section.getAttribute('id');
+                    <button class="cta-button secondary" onclick="downloadCV()">
+                        <i class="fas fa-download"></i>
+                        <span>Descargar CV</span>
+                        <div class="button-effect"></div>
+                    </button>
+                </div>
                 
-                if (scrollPos >= top && scrollPos < top + height) {
-                    document.querySelectorAll('.nav-item').forEach(item => {
-                        item.classList.remove('active');
-                        if (item.getAttribute('href') === `#${id}`) {
-                            item.classList.add('active');
-                        }
-                    });
-                }
-            });
-        };
-
-        // ===== PROJECT MANAGEMENT =====
-        PortfolioApp.prototype.renderProjects = function() {
-            const grid = document.getElementById('projectsGrid');
-            
-            if (this.projects.length === 0) {
-                grid.innerHTML = `
-                    <div style="grid-column: 1/-1; text-align: center; padding: var(--space-4xl) var(--space-lg); color: var(--text-secondary);">
-                        <div style="font-size: 4rem; margin-bottom: var(--space-lg); opacity: 0.6;">🚀</div>
-                        <h3 style="font-size: 24px; margin-bottom: var(--space-md);">Aún no hay proyectos</h3>
-                        <p>Haz clic en "Agregar Proyecto" para comenzar tu portfolio</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">2+</span>
+                        <span class="stat-label">Años Desarrollo</span>
                     </div>
-                `;
-                return;
-            }
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Años Edición</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">Ideas Creativas</span>
+                    </div>
+                </div>
+            </div>
             
-            grid.innerHTML = this.projects.map(project => this.createProjectCard(project)).join('');
-            
-            // Add stagger animation
-            const cards = grid.querySelectorAll('.project-card');
-            cards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.1}s`;
-                card.classList.add('animate-on-scroll');
-            });
-        };
-        
-        PortfolioApp.prototype.createProjectCard = function(project) {
-            const categoryEmojis = {
-                design: '🎨',
-                video: '🎬',
-                web: '💻',
-                content: '📺'
-            };
-            
-            return `
-                <div class="project-card" data-category="${project.category}" onclick="app.editProject(${project.id})">
-                    ${this.createMediaContent(project)}
-                    <div class="project-content">
-                        <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-md);">
-                            <span style="font-size: 1.5rem;">${categoryEmojis[project.category] || '⭐'}</span>
-                            <h3 class="project-title">${project.title}</h3>
+            <div class="hero-visual">
+                <div class="visual-container">
+                    <div class="floating-elements">
+                        <div class="floating-icon" style="--delay: 0s">
+                            <i class="fab fa-html5"></i>
                         </div>
-                        <p class="project-description">${project.description}</p>
-                        ${project.tech && project.tech.length > 0 ? `
-                            <div class="project-tags">
-                                ${project.tech.map(tech => `<span class="project-tag">${tech}</span>`).join('')}
+                        <div class="floating-icon" style="--delay: 1s">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <div class="floating-icon" style="--delay: 2s">
+                            <i class="fab fa-js-square"></i>
+                        </div>
+                        <div class="floating-icon" style="--delay: 3s">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="floating-icon" style="--delay: 4s">
+                            <i class="fas fa-database"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="hologram">
+                        <div class="hologram-content">
+                            <div class="code-snippet">
+                                <div class="code-line">
+                                    <span class="code-keyword">const</span>
+                                    <span class="code-variable">developer</span>
+                                    <span class="code-operator">=</span>
+                                    <span class="code-string">"Eric"</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="code-keyword">function</span>
+                                    <span class="code-function">createMagic</span>
+                                    <span class="code-bracket">()</span>
+                                    <span class="code-bracket">{</span>
+                                </div>
+                                <div class="code-line code-indent">
+                                    <span class="code-keyword">return</span>
+                                    <span class="code-string">"innovation"</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="code-bracket">}</span>
+                                </div>
                             </div>
-                        ` : ''}
+                        </div>
                     </div>
                 </div>
-            `;
-        };
+            </div>
+        </div>
         
-        PortfolioApp.prototype.createMediaContent = function(project) {
-            if (!project.media || project.media.length === 0) {
-                const categoryEmojis = { design: '🎨', video: '🎬', web: '💻', content: '📺' };
-                return `
-                    <div class="project-image" style="background: var(--gradient-primary);">
-                        <span style="font-size: 4rem; opacity: 0.8;">${categoryEmojis[project.category] || '⭐'}</span>
-                    </div>
-                `;
-            }
+        <div class="hero-scroll">
+            <div class="scroll-indicator">
+                <span>Explora</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">whoami</span>
+                <h2 class="section-title">Sobre Mí</h2>
+                <p class="section-subtitle">Conoce mi historia y pasión por la tecnología</p>
+            </div>
             
-            if (project.media.length === 1) {
-                const media = project.media[0];
-                return `
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-card">
+                        <div class="card-header">
+                            <i class="fas fa-terminal"></i>
+                            <h3>Mi Historia</h3>
+                        </div>
+                        <p>
+                            Soy Eric Brítez, de Formosa Capital. Me apasiona la tecnología y todo lo que se pueda crear con ella.
+                            Mi objetivo es simple: desarrollar soluciones web útiles y al mismo tiempo compartir contenido digital 
+                            que inspire, enseñe y conecte con otros.
+                        </p>
+                        <p>
+                            Me egresé de la E.P.E.S Nº16 "República de Italia", en la orientación de Ciencias Naturales. 
+                            Actualmente me estoy formando en Desarrollo de Software, mientras genero contenido
+                            tecnológico en redes sociales para mi comunidad.
+                        </p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <div class="card-header">
+                            <i class="fas fa-lightbulb"></i>
+                            <h3>Mi Filosofía</h3>
+                        </div>
+                        <p>
+                           Creo que la tecnología tiene que ser para todos, no solo para unos pocos. Por eso me dedico a crear contenido que explique la programación y el desarrollo web de una forma simple y real, mostrando que cualquiera puede aprender si se anima a intentarlo.
+
+
+                        </p>
+                        <div class="quote">
+                            <i class="fas fa-quote-left"></i>
+                            <span>"Sigo aprendiendo nuevas tecnologías todo el tiempo, pero mientras tanto voy construyendo con lo poco que sé. La idea es crecer paso a paso y nunca dejar de crear."</span>
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-visual">
+                    <div class="profile-container">
+                        <div class="profile-frame">
+                            <div class="frame-corners">
+                                <div class="corner top-left"></div>
+                                <div class="corner top-right"></div>
+                                <div class="corner bottom-left"></div>
+                                <div class="corner bottom-right"></div>
+                            </div>
+                            <div class="profile-avatar">
+                                <img src="eric.webp" alt="Mi foto" />
+                            </div>
+                        </div>
+                        
+                        <div class="profile-info">
+                            <h4>Eric Brítez</h4>
+                            <p>Full Stack Developer & Content Creator</p>
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Formosa, Argentina</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">stack --list</span>
+                <h2 class="section-title">Mis Habilidades</h2>
+                <p class="section-subtitle">Tecnologías y herramientas que domino</p>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Desarrollo Web</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                            <div class="skill-level" data-level="90"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                            <div class="skill-level" data-level="85"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js-square"></i>
+                            <span>JavaScript</span>
+                            <div class="skill-level" data-level="80"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                            <div class="skill-level" data-level="75"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>MySQL</span>
+                            <div class="skill-level" data-level="70"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-video"></i>
+                        <h3>Contenido Digital</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fas fa-cut"></i>
+                            <span>CapCut</span>
+                            <div class="skill-level" data-level="95"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-tiktok"></i>
+                            <span>TikTok Content</span>
+                            <div class="skill-level" data-level="90"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-palette"></i>
+                            <span>Canva</span>
+                            <div class="skill-level" data-level="85"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-adobe"></i>
+                            <span>Photoshop</span>
+                            <div class="skill-level" data-level="75"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category centered">
+                    <div class="category-header">
+                        <i class="fas fa-heart"></i>
+                        <h3>Habilidades Blandas</h3>
+                    </div>
+                    <div class="soft-skills">
+                        <span class="soft-skill">Responsabilidad</span>
+                        <span class="soft-skill">Amabilidad</span>
+                        <span class="soft-skill">Constancia</span>
+                        <span class="soft-skill">Creatividad</span>
+                        <span class="soft-skill">Trabajo en Equipo</span>
+                        <span class="soft-skill">Aprendizaje Continuo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">ls projects/</span>
+                <h2 class="section-title">Mis Proyectos</h2>
+                <p class="section-subtitle">Una muestra de mi trabajo y creatividad</p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card featured">
                     <div class="project-image">
-                        ${media.type === 'video' ? 
-                            `<video src="${media.src}" muted loop preload="metadata"></video>
-                             <button class="play-btn" onclick="event.stopPropagation(); app.toggleVideo(this)" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; background: rgba(0,0,0,0.7); border: none; border-radius: 50%; color: white; font-size: 20px; cursor: pointer;">▶</button>` :
-                            `<img src="${media.src}" alt="${project.title}" loading="lazy">`
-                        }
-                    </div>
-                `;
-            }
-            
-            // Multiple media - carousel
-            return `
-                <div class="project-image" style="position: relative; overflow: hidden;">
-                    <div class="media-carousel" id="carousel-${project.id}" style="display: flex; transition: transform 0.3s ease;">
-                        ${project.media.map((media, index) => `
-                            <div class="media-slide" style="min-width: 100%; position: relative;">
-                                ${media.type === 'video' ? 
-                                    `<video src="${media.src}" muted loop preload="metadata" style="width: 100%; height: 100%; object-fit: cover;"></video>
-                                     <button class="play-btn" onclick="event.stopPropagation(); app.toggleVideo(this)" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; background: rgba(0,0,0,0.7); border: none; border-radius: 50%; color: white; font-size: 20px; cursor: pointer;">▶</button>` :
-                                    `<img src="${media.src}" alt="${project.title}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">`
-                                }
+                        <div class="project-overlay">
+                            <div class="project-icon">
+                                <i class="fab fa-tiktok"></i>
                             </div>
-                        `).join('')}
+                        </div>
                     </div>
-                    <div class="carousel-nav" style="position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px;">
-                        ${project.media.map((_, i) => 
-                            `<button class="nav-dot ${i === 0 ? 'active' : ''}" onclick="event.stopPropagation(); app.changeSlide(${project.id}, ${i})" style="width: 10px; height: 10px; border-radius: 50%; border: none; background: ${i === 0 ? 'white' : 'rgba(255,255,255,0.5)'}; cursor: pointer; transition: all 0.3s ease;"></button>`
-                        ).join('')}
-                    </div>
-                </div>
-            `;
-        };
-        
-        PortfolioApp.prototype.toggleVideo = function(btn) {
-            const video = btn.previousElementSibling || btn.parentElement.querySelector('video');
-            if (video) {
-                if (video.paused) {
-                    video.play();
-                    btn.textContent = '⏸';
-                } else {
-                    video.pause();
-                    btn.textContent = '▶';
-                }
-            }
-        };
-        
-        PortfolioApp.prototype.changeSlide = function(projectId, index) {
-            const carousel = document.getElementById(`carousel-${projectId}`);
-            const dots = carousel.parentElement.querySelectorAll('.nav-dot');
-            
-            if (carousel) {
-                carousel.style.transform = `translateX(-${index * 100}%)`;
-                
-                dots.forEach((dot, i) => {
-                    dot.classList.toggle('active', i === index);
-                    dot.style.background = i === index ? 'white' : 'rgba(255,255,255,0.5)';
-                });
-            }
-        };
-
-        // ===== FILTER SYSTEM =====
-        PortfolioApp.prototype.initFilters = function() {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const filter = btn.dataset.filter;
-                    
-                    // Update active filter
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    
-                    // Filter projects with animation
-                    this.filterProjects(filter);
-                });
-            });
-        };
-        
-        PortfolioApp.prototype.filterProjects = function(filter) {
-            const cards = document.querySelectorAll('.project-card');
-            
-            cards.forEach((card, index) => {
-                const category = card.dataset.category;
-                const shouldShow = filter === 'all' || category === filter;
-                
-                if (shouldShow) {
-                    card.style.display = 'block';
-                    card.style.animation = `fadeInUp 0.6s ease ${index * 0.1}s both`;
-                } else {
-                    card.style.animation = 'fadeOut 0.3s ease both';
-                    setTimeout(() => {
-                        if (card.style.animation.includes('fadeOut')) {
-                            card.style.display = 'none';
-                        }
-                    }, 300);
-                }
-            });
-        };
-
-        // ===== MODAL & FORM SYSTEM =====
-        PortfolioApp.prototype.initForm = function() {
-            const form = document.getElementById('projectForm');
-            const mediaInput = document.getElementById('media');
-            const uploadArea = document.querySelector('.upload-area');
-            
-            // Drag and drop functionality
-            uploadArea.addEventListener('dragover', (e) => {
-                e.preventDefault();
-                uploadArea.style.borderColor = 'var(--border-accent)';
-                uploadArea.style.background = 'rgba(99, 102, 241, 0.05)';
-            });
-            
-            uploadArea.addEventListener('dragleave', (e) => {
-                e.preventDefault();
-                uploadArea.style.borderColor = 'var(--border-primary)';
-                uploadArea.style.background = 'transparent';
-            });
-            
-            uploadArea.addEventListener('drop', (e) => {
-                e.preventDefault();
-                uploadArea.style.borderColor = 'var(--border-primary)';
-                uploadArea.style.background = 'transparent';
-                
-                const files = Array.from(e.dataTransfer.files);
-                this.handleFileUpload(files);
-            });
-            
-            // File input change
-            mediaInput.addEventListener('change', (e) => {
-                const files = Array.from(e.target.files);
-                this.handleFileUpload(files);
-            });
-            
-            // Form submission
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                this.saveProject();
-            });
-            
-            // Close modal on escape
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && document.getElementById('modal').classList.contains('active')) {
-                    this.closeModal();
-                }
-            });
-            
-            // Close modal on backdrop click
-            document.getElementById('modal').addEventListener('click', (e) => {
-                if (e.target.id === 'modal') {
-                    this.closeModal();
-                }
-            });
-        };
-        
-        PortfolioApp.prototype.handleFileUpload = function(files) {
-            const validTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'video/mp4', 'video/mov', 'video/avi', 'video/webm'];
-            const maxFiles = 4;
-            
-            if (this.mediaFiles.length + files.length > maxFiles) {
-                this.showNotification(`Máximo ${maxFiles} archivos permitidos`, 'warning');
-                return;
-            }
-            
-            files.forEach(file => {
-                if (validTypes.includes(file.type) && file.size <= 50 * 1024 * 1024) { // 50MB max
-                    const reader = new FileReader();
-                    reader.onload = (e) => {
-                        this.mediaFiles.push({
-                            src: e.target.result,
-                            type: file.type.startsWith('video/') ? 'video' : 'image',
-                            name: file.name,
-                            size: file.size
-                        });
-                        this.updatePreview();
-                    };
-                    reader.readAsDataURL(file);
-                } else {
-                    this.showNotification(`Archivo ${file.name} no válido o muy grande`, 'error');
-                }
-            });
-        };
-        
-        PortfolioApp.prototype.updatePreview = function() {
-            const preview = document.getElementById('preview');
-            
-            if (this.mediaFiles.length === 0) {
-                preview.innerHTML = '';
-                return;
-            }
-            
-            preview.innerHTML = this.mediaFiles.map((media, index) => `
-                <div class="preview-item">
-                    ${media.type === 'video' ? 
-                        `<video src="${media.src}" muted preload="metadata"></video>` : 
-                        `<img src="${media.src}" alt="Preview ${index + 1}">`
-                    }
-                    <button type="button" class="remove-btn" onclick="app.removeMedia(${index})" title="Eliminar archivo">×</button>
-                    <div style="position: absolute; bottom: 4px; left: 4px; right: 4px; background: rgba(0,0,0,0.7); color: white; padding: 2px 6px; border-radius: 4px; font-size: 10px; text-align: center;">
-                        ${media.type === 'video' ? '🎥' : '🖼️'} ${this.formatFileSize(media.size)}
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>@briteech</h3>
+                            <span class="project-status featured">Destacado</span>
+                        </div>
+                        <p>Canal de contenido tecnológico en TikTok donde comparto tutoriales, tips y tendencias del mundo digital de manera accesible y entretenida.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Content Creation</span>
+                            <span class="tech-tag">Video Editing</span>
+                            <span class="tech-tag">CapCut</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.tiktok.com/@briteech" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Ver Canal
+                            </a>
+                        </div>
                     </div>
                 </div>
-            `).join('');
-        };
-        
-        PortfolioApp.prototype.removeMedia = function(index) {
-            this.mediaFiles.splice(index, 1);
-            this.updatePreview();
-        };
-        
-        PortfolioApp.prototype.formatFileSize = function(bytes) {
-            if (bytes === 0) return '0 B';
-            const k = 1024;
-            const sizes = ['B', 'KB', 'MB', 'GB'];
-            const i = Math.floor(Math.log(bytes) / Math.log(k));
-            return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
-        };
-
-        // ===== PROJECT CRUD OPERATIONS =====
-        PortfolioApp.prototype.openModal = function() {
-            this.currentEditId = null;
-            this.mediaFiles = [];
-            
-            document.getElementById('modalTitle').textContent = 'Agregar Nuevo Proyecto';
-            document.getElementById('deleteBtn').style.display = 'none';
-            document.getElementById('projectForm').reset();
-            document.getElementById('preview').innerHTML = '';
-            
-            const modal = document.getElementById('modal');
-            modal.classList.add('active');
-            
-            // Focus first input
-            setTimeout(() => {
-                document.getElementById('title').focus();
-            }, 100);
-        };
-        
-        PortfolioApp.prototype.closeModal = function() {
-            const modal = document.getElementById('modal');
-            modal.classList.remove('active');
-        };
-        
-        PortfolioApp.prototype.editProject = function(id) {
-            const project = this.projects.find(p => p.id === id);
-            if (!project) return;
-            
-            this.currentEditId = id;
-            this.mediaFiles = project.media ? [...project.media] : [];
-            
-            document.getElementById('modalTitle').textContent = 'Editar Proyecto';
-            document.getElementById('deleteBtn').style.display = 'block';
-            
-            // Populate form
-            document.getElementById('title').value = project.title;
-            document.getElementById('description').value = project.description;
-            document.getElementById('category').value = project.category;
-            document.getElementById('tech').value = project.tech ? project.tech.join(', ') : '';
-            
-            this.updatePreview();
-            
-            const modal = document.getElementById('modal');
-            modal.classList.add('active');
-        };
-        
-        PortfolioApp.prototype.saveProject = function() {
-            const title = document.getElementById('title').value.trim();
-            const description = document.getElementById('description').value.trim();
-            const category = document.getElementById('category').value;
-            const techInput = document.getElementById('tech').value.trim();
-            const tech = techInput ? techInput.split(',').map(t => t.trim()).filter(t => t) : [];
-            
-            // Validation
-            if (!title || !description || !category) {
-                this.showNotification('Por favor completa todos los campos obligatorios', 'error');
-                return;
-            }
-            
-            if (title.length > 100) {
-                this.showNotification('El título no puede exceder 100 caracteres', 'error');
-                return;
-            }
-            
-            if (description.length > 500) {
-                this.showNotification('La descripción no puede exceder 500 caracteres', 'error');
-                return;
-            }
-            
-            const projectData = {
-                title,
-                description,
-                category,
-                tech,
-                media: this.mediaFiles.length > 0 ? this.mediaFiles : null,
-                createdAt: new Date().toISOString(),
-                updatedAt: new Date().toISOString()
-            };
-            
-            if (this.currentEditId) {
-                // Update existing project
-                const index = this.projects.findIndex(p => p.id === this.currentEditId);
-                if (index !== -1) {
-                    this.projects[index] = { 
-                        ...this.projects[index], 
-                        ...projectData,
-                        id: this.currentEditId
-                    };
-                }
-            } else {
-                // Create new project
-                const newProject = {
-                    id: Date.now(),
-                    ...projectData
-                };
-                this.projects.unshift(newProject); // Add to beginning
-            }
-            
-            this.saveProjects();
-            this.renderProjects();
-            this.closeModal();
-            
-            const message = this.currentEditId ? 'Proyecto actualizado exitosamente' : 'Proyecto creado exitosamente';
-            this.showNotification(message, 'success');
-        };
-        
-        PortfolioApp.prototype.deleteProject = function() {
-            if (!this.currentEditId) return;
-            
-            const project = this.projects.find(p => p.id === this.currentEditId);
-            if (!project) return;
-            
-            if (confirm(`¿Estás seguro de que quieres eliminar "${project.title}"?\n\nEsta acción no se puede deshacer.`)) {
-                this.projects = this.projects.filter(p => p.id !== this.currentEditId);
-                this.saveProjects();
-                this.renderProjects();
-                this.closeModal();
-                this.showNotification('Proyecto eliminado exitosamente', 'success');
-            }
-        };
-
-        // ===== ADVANCED ANIMATIONS =====
-        PortfolioApp.prototype.initScrollAnimations = function() {
-            const animateElements = document.querySelectorAll('.animate-on-scroll');
-            
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate');
-                    }
-                });
-            }, observerOptions);
-            
-            animateElements.forEach(el => observer.observe(el));
-            this.observers.set('scroll', observer);
-        };
-        
-        PortfolioApp.prototype.initSkillAnimations = function() {
-            const skillCards = document.querySelectorAll('.skill-card');
-            
-            skillCards.forEach((card, index) => {
-                card.addEventListener('mouseenter', () => {
-                    const progressBar = card.querySelector('.skill-progress');
-                    if (progressBar) {
-                        progressBar.style.animation = 'shimmer 1s ease-in-out';
-                    }
-                });
                 
-                card.addEventListener('mouseleave', () => {
-                    const progressBar = card.querySelector('.skill-progress');
-                    if (progressBar) {
-                        progressBar.style.animation = '';
-                    }
-                });
-            });
-        };
-
-        // ===== CURSOR ENHANCEMENT =====
-        PortfolioApp.prototype.initCursor = function() {
-            const cursor = document.querySelector('.cursor');
-            if (!cursor) return;
-            
-            let mouseX = 0, mouseY = 0;
-            let cursorX = 0, cursorY = 0;
-            
-            document.addEventListener('mousemove', (e) => {
-                mouseX = e.clientX;
-                mouseY = e.clientY;
-            });
-            
-            const animateCursor = () => {
-                const dx = mouseX - cursorX;
-                const dy = mouseY - cursorY;
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Portfolio Personal</h3>
+                            <span class="project-status">Activo</span>
+                        </div>
+                        <p>Mi página web personal donde muestro proyectos, habilidades y experiencia profesional con un diseño moderno e interactivo.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-globe"></i>
+                                Ver Sitio
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 
-                cursorX += dx * 0.1;
-                cursorY += dy * 0.1;
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-icon">
+                                <i class="fas fa-dumbbell"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Asesoramiento Físico</h3>
+                            <span class="project-status">Completado</span>
+                        </div>
+                        <p>Plataforma web dedicada al coaching y asesoramiento en fitness y bienestar personal con diseño responsive y moderno.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">Responsive</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://kobyy24.github.io/Asesoramiento-Fisico/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Ver Proyecto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">git log --oneline</span>
+                <h2 class="section-title">Mi Experiencia</h2>
+                <p class="section-subtitle">El camino recorrido en el mundo digital</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Content Creator & Developer</h3>
+                            <span class="timeline-period">2020 - Presente</span>
+                        </div>
+                        <div class="timeline-company">
+                            <i class="fab fa-tiktok"></i>
+                            @briteech & Proyectos Freelance
+                        </div>
+                        <p>Creación de contenido tecnológico educativo y desarrollo de proyectos web personalizados. Enfoque en hacer la tecnología accesible para todos.</p>
+                        <div class="timeline-achievements">
+                            <span>Crecimiento orgánico en redes sociales</span>
+                            <span>Proyectos web exitosos</span>
+                            <span>Comunidad educativa activa</span>
+                        </div>
+                    </div>
+                </div>
                 
-                cursor.style.transform = `translate(${cursorX - 10}px, ${cursorY - 10}px)`;
-                requestAnimationFrame(animateCursor);
-            };
-            
-            animateCursor();
-            
-            // Hover effects
-            const interactiveElements = document.querySelectorAll('a, button, .project-card, .skill-card, .contact-card');
-            
-            interactiveElements.forEach(el => {
-                el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-                el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-            });
-        };
-
-        // ===== KEYBOARD SHORTCUTS =====
-        PortfolioApp.prototype.initKeyboardShortcuts = function() {
-            document.addEventListener('keydown', (e) => {
-                // Ctrl/Cmd + K for quick add project
-                if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-                    e.preventDefault();
-                    this.openModal();
-                }
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Editor Digital</h3>
+                            <span class="timeline-period">2019 - Presente</span>
+                        </div>
+                        <div class="timeline-company">
+                            <i class="fas fa-cut"></i>
+                            Edición Profesional
+                        </div>
+                        <p>Especialización en edición de video digital con CapCut y herramientas profesionales. Creación de contenido visual impactante y storytelling efectivo.</p>
+                        <div class="timeline-achievements">
+                            <span>5+ años de experiencia</span>
+                            <span>Técnicas avanzadas de edición</span>
+                            <span>Storytelling visual</span>
+                        </div>
+                    </div>
+                </div>
                 
-                // Number keys for navigation (1-5)
-                if (e.key >= '1' && e.key <= '5' && !e.ctrlKey && !e.metaKey && !e.altKey) {
-                    const navItems = document.querySelectorAll('.nav-item');
-                    const index = parseInt(e.key) - 1;
-                    if (navItems[index]) {
-                        navItems[index].click();
-                    }
-                }
-            });
-        };
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Educación Secundaria</h3>
+                            <span class="timeline-period">2022</span>
+                        </div>
+                        <div class="timeline-company">
+                            <i class="fas fa-school"></i>
+                            E.P.E.S Nº16 "Rca de Italia"
+                        </div>
+                        <p>Graduado en Ciencias Naturales, desarrollando bases sólidas en pensamiento lógico y metodología científica que aplico en la programación.</p>
+                        <div class="timeline-achievements">
+                            <span>Ciencias Naturales</span>
+                            <span>Pensamiento lógico</span>
+                            <span>Metodología científica</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        // ===== RESPONSIVE HANDLERS =====
-        PortfolioApp.prototype.initResponsiveHandlers = function() {
-            let resizeTimeout;
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">contact --me</span>
+                <h2 class="section-title">¡Trabajemos Juntos!</h2>
+                <p class="section-subtitle">¿Tienes un proyecto en mente? ¡Hablemos!</p>
+            </div>
             
-            window.addEventListener('resize', () => {
-                clearTimeout(resizeTimeout);
-                resizeTimeout = setTimeout(() => {
-                    this.handleResize();
-                }, 250);
-            });
-        };
-        
-        PortfolioApp.prototype.handleResize = function() {
-            // Recalculate animations and layouts on resize
-            const isMobile = window.innerWidth <= 768;
-            
-            if (isMobile) {
-                // Mobile optimizations
-                document.body.classList.add('mobile');
-            } else {
-                document.body.classList.remove('mobile');
-            }
-        };
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="card-icon">
+                            <i class="fas fa-paper-plane"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>erikbritejr@email.com</p>
+                        <a href="mailto:erikbritejr@email.com" class="contact-link">
+                            Enviar Email <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="card-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <h3>Instagram Personal</h3>
+                        <p>@britez_eric</p>
+                        <a href="#" class="contact-link">
+                            Contactar <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="card-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Contenido Tech</h3>
+                        <p>@briteech</p>
+                        <a href="#" class="contact-link">
+                            Seguir <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                   <form id="contact-form" class="form">
 
-        // ===== NOTIFICATION SYSTEM =====
-        PortfolioApp.prototype.showNotification = function(message, type = 'success') {
-            const notification = document.getElementById('successMsg');
-            
-            // Update notification style based on type
-            const colors = {
-                success: '#10b981',
-                error: '#ef4444',
-                warning: '#f59e0b',
-                info: '#6366f1'
-            };
-            
-            const icons = {
-                success: '✅',
-                error: '❌',
-                warning: '⚠️',
-                info: 'ℹ️'
-            };
-            
-            notification.style.background = colors[type] || colors.success;
-            notification.textContent = `${icons[type] || icons.success} ${message}`;
-            
-            notification.classList.add('show');
-            
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 4000);
-        };
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Asunto</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">
+                            <i class="fas fa-rocket"></i>
+                            <span>Enviar Mensaje</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        // ===== UTILITY FUNCTIONS =====
-        PortfolioApp.prototype.debounce = function(func, wait) {
-            let timeout;
-            return function executedFunction(...args) {
-                const later = () => {
-                    clearTimeout(timeout);
-                    func(...args);
-                };
-                clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
-            };
-        };
-        
-        PortfolioApp.prototype.throttle = function(func, limit) {
-            let inThrottle;
-            return function() {
-                const args = arguments;
-                const context = this;
-                if (!inThrottle) {
-                    func.apply(context, args);
-                    inThrottle = true;
-                    setTimeout(() => inThrottle = false, limit);
-                }
-            }
-        };
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 Eric Brítez. Hecho con ❤️ en Formosa, Argentina</p>
+                    <p>Desarrollador Web & Content Creator</p>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="https://www.tiktok.com/@briteech" target="_blank">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="#" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="mailto:erikbritejr@email.com">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-        // ===== INITIALIZATION =====
-        let app;
-        
-        document.addEventListener('DOMContentLoaded', () => {
-            app = new PortfolioApp();
-            
-            // Global functions for onclick handlers
-            window.openModal = () => app.openModal();
-            window.closeModal = () => app.closeModal();
-            window.editProject = (id) => app.editProject(id);
-            window.deleteProject = () => app.deleteProject();
-            window.removeMedia = (index) => app.removeMedia(index);
-            window.toggleVideo = (btn) => app.toggleVideo(btn);
-            window.changeSlide = (projectId, index) => app.changeSlide(projectId, index);
-        });
-
-        // ===== ADDITIONAL CSS ANIMATIONS =====
-        const additionalStyles = `
-            @keyframes fadeOut {
-                from { opacity: 1; transform: scale(1); }
-                to { opacity: 0; transform: scale(0.9); }
-            }
-            
-            @media (max-width: 768px) {
-                .cursor { display: none; }
-            }
-        `;
-        
-        const styleSheet = document.createElement('style');
-        styleSheet.textContent = additionalStyles;
-        document.head.appendChild(styleSheet);
-
-        // ===== PERFORMANCE OPTIMIZATIONS =====
-        
-        // Lazy load images
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.classList.remove('lazy');
-                        observer.unobserve(img);
-                    }
-                });
-            });
-            
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        }
-        
-        // Preload critical resources
-        const preloadLinks = [
-            'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@100;200;300;400;500;600;700&display=swap'
-        ];
-        
-        preloadLinks.forEach(href => {
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.as = 'style';
-            link.href = href;
-            document.head.appendChild(link);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
