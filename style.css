@@ -180,11 +180,28 @@ body {
     font-family: var(--font-mono);
     font-size: 1.5rem;
     font-weight: 700;
-    background: var(--gradient-text);
-    background-clip: text;
+
+    /* Gradiente animado */
+    background: linear-gradient(90deg, #ff7a18, #af002d, #319197, #ff7a18);
+    background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    /* Animación suave del gradiente */
+    animation: gradientMove 5s ease infinite;
+
+    /* Opcional: suavizado del texto */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 
 .brand-subtitle {
     font-size: 0.75rem;
